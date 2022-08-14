@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Jumping Sock - Registrace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="static/media/favicon.png"/>
+
+    <script defer src="static/scripts/index.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!--  Local .css file link  -->
+    <link rel="stylesheet" href="static/styles/index.css">
+<!--  Bootstrap 5.0 Library  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .form-line, .input-group {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100">
+        <header class="row p-3 bg-light align-items-center border">
+            <div class="header-container">
+                <h1 class="display-2 text-center text-secondary">Jumping Sock</h1>
+                <img id="logo-img" src="static/media/logo.png" alt="logo.png">
+            </div>
+        </header>
+
+        <div class="row p-1 align-items-center" style="margin-top: 2%">
+            <div class="col-lg-6 p-0" style="height: 70vh; max-height: 600px; max-width: 700px; margin: auto;">
+                <div class="text-white bg-secondary p-1 border rounded-top"><h2 class="display-6 text-center">Registrace</h2></div>
+                    <div class="bg-light p-2 border rounded-bottom align-items-center" style="height: 85%">
+                        <form id="register-form" role="form" autocomplete="on" method="post">
+                            <div class="form-body">
+                                <span class="error text-danger"><small>{{ reg_error }}</small></span>
+                                <input type="text" name="reg_uname" id="uname" maxlength="50"  value="" class="form-line form-control input-sm" placeholder="Přihlašovací jméno" required>
+                                <input type="email" name="reg_email" id="email" maxlength="50"  value="" class="form-line form-control input-sm" placeholder="Emailová adresa" required>
+                                <div class="input-group">
+                                    <input type="password" name="reg_passw" id="reg_passw" maxlength="20" class="form-control input-sm mt-0" placeholder="Heslo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Musí obsahovat alespoň 8 znaků, velká a malá písmena a číslo" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text h-100" id="basic-addon3"><img id="reg-pass-vis-toggle" src="static/media/view.png" alt="show pass" onclick="handleRegPasswordToggle()"></span>
+                                    </div>
+                                </div>
+                                <input type="password" name="reg_passw_conf" id="reg_passw_conf" maxlength="20" class="form-line form-control input-sm" placeholder="Potvrďte heslo" oninput="checkPasswMatch(this)" required>
+                            </div>
+                            <div class="row form-line">
+                                <div class="col-4 offset-4 text-center">
+                                    <input type="submit" class="btn btn-primary" name="submit_reg" value="Registrovat se">
+                                </div>
+                                <div class="col-4">
+                                    <a id="registration" href="{{ url_for('login') }}" style="text-decoration: none">Zpět na přihlášení</a>
+                                </div>
+                            </div>
+                        </form>          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

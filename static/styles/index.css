@@ -1,0 +1,60 @@
+#login-pass-vis-toggle, #reg-pass-vis-toggle {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.header-container {
+    text-align: center;
+    height: auto;
+}
+
+.header-container h1 {
+    font-size: 8vw;
+}
+
+#logo-img {
+    position: static;
+    height: 15vh;
+    padding: 1vh;
+    width: auto;
+}
+
+.login-form-container .row {
+    margin-top: 5%;
+}
+
+@media only screen and (min-width: 576px) {
+    #logo-img {
+        position: absolute;
+        padding: 0;
+        top: 3vh;
+        left: 3vh;
+        height: 9vh;
+    }
+
+    .header-container {
+        text-align: initial;
+        height: 12vh;
+    }
+
+    .header-container h1 {
+        font-size: 8vh;
+    }
+
+    .text-sm-right {
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel-control-prev, .carousel-control-next, .carousel-indicators {
+        display: none!important;
+    }
+
+    #news-wrapper, #login-wrapper {
+        display: block;
+        margin-right: 0;
+    }
+}
