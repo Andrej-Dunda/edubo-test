@@ -7,3 +7,4 @@ Dobrý den, aplikace se správně spustí při splnění následujícíh kroků:
   4. Aplikace se spustí v adresáři "edubo-test" příkazem "flask run"
   
 Pokud jsou výše uvedené podmínky splněny, aplikace se spustí na adrese "http://localhost:5000/"
+Pozn.: Může se stát, že obnovení hesla s odesláním na email bude fungovat jen na WindowsOS. Pro případné zobrazení hesla otevřete soubor "user_db.txt"
